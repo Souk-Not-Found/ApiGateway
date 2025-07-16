@@ -25,6 +25,10 @@ public class ApiGatewayApplication {
 				.route("admin-service", r -> r
 						.path("/admin/**")                           // optional admin routes
 						.uri("lb://admin-service"))                 // must match actual registered name
+
+				.route("payment-ms", r -> r
+					.path("/api/payments/**")
+					.uri("lb://payment-ms"))
 				.build();
 	}
 }

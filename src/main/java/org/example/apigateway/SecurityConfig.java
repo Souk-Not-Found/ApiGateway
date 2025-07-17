@@ -23,6 +23,8 @@ public class SecurityConfig {
                         .pathMatchers("/eureka/**").permitAll()
                         .pathMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .pathMatchers("/api/payments/**").permitAll()
+                        .pathMatchers("/recommendation_events/**").permitAll()
+
                         .anyExchange().authenticated()
                 )
                 .oauth2ResourceServer(oauth -> oauth.jwt(Customizer.withDefaults()))

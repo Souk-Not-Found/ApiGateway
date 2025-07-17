@@ -29,6 +29,9 @@ public class ApiGatewayApplication {
 				.route("payment-ms", r -> r
 					.path("/api/payments/**")
 					.uri("lb://payment-ms"))
+			        .route("recommendation-service", r -> r
+						.path("/recommendation_events/**")
+						.uri("lb://event-recommendation-service"))
 				.build();
 	}
 }
